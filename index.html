@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pulsars</title>
+  <link rel="stylesheet" href="./reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="./reveal.js/dist/reveal.css">
+  <!-- <link rel="stylesheet" href="dist/theme/black.css" id="theme"> -->
+  <link rel="stylesheet" href="./custom.css" id="theme">
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="footer-left" id="footer1" style="display: none;">
+      Alex Chen<br>
+      cyuran@wustl.edu
+    </div>
+    <div class="footer-right" id="footer2" style="display: none;">
+      SPS Zone 12 Meeting<br>
+      March 30, 2024
+    </div>
+    <div class="slides">
+
+      <!-- Start the slides here, each slide is in its own <section> -->
+      <!-- <section data-background-image="figures/crab-jwst.webp" data-background-size="contain"> -->
+      <section data-background-image="figures/title-page.png">
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>What are Pulsars?</h2>
+          <div class="content">
+            <p>"On 28 November 1967, it came again, a string of pulses one-and-a
+            third seconds apart." - Jocelyn Bell Burnell</p>
+            <br>
+            <img data-src="figures/hwsh-pulsar.jpeg"
+                 style="display: inline-block; width: 80%;">
+          </div>
+        </div>
+      </section>
+
+      <!-- <section>
+           <div class="content-page">
+           <h2>What are Pulsars?</h2>
+           <div class="content">
+           <p>Within a year, a pulsar is discovered near the center of the Crab
+           nebula, with pulsating period $33\,\mathrm{ms}$.</p>
+           <br>
+           <img data-src="figures/crab-pulsar-discovery.png"
+           style="display: inline-block; width: 80%;">
+           </div>
+           </div>
+           </section>
+      -->
+      <section>
+        <div class="content-page">
+          <h2>What are Pulsars?</h2>
+          <div class="content">
+            <p>Almost immediately after the discovery of pulsars, physicists
+            postulate that they are rapidly rotating neutron stars:</p>
+            <br>
+            <ul>
+              <li class="fragment">Only rotating can provide an extremely stable periodic signal;</li>
+              <br>
+              <li class="fragment">Rapid rotation means that the object must be extremely small,
+              only a neutron star can fit the bill;</li>
+              <br>
+              <li class="fragment">Their pulse period slowly increase over time,
+              which is believed to be rotation energy taken away by dipole radiation;</li>
+              <br>
+              <li class="fragment">Dipole radiation allows us to estimate their
+              magnetic field, which turns out to be ${\sim}10^{8}\,\mathrm{T}$!</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <canvas id="bgcanvas" data-sample="star_dipole"></canvas>
+      </section>
+
+      <section data-background-image="figures/earth-magnets.png">
+      </section>
+
+      <section data-background-image="figures/Neutron_Star_Manhattan.jpg">
+        <div class="content-page">
+          <h2>Pulsars are about 20km across, packing the mass of a Sun</h2>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>How do we detect Pulsars?</h2>
+        </div>
+      </section>
+
+      <section data-background-image="figures/radio-telescope.jpg">
+        <div class="content-page">
+          <h2>How do we detect Pulsars?</h2>
+          <div id="overlay" class="fragment fade-in-then-out">
+            <img data-src="figures/radio-pulse-folding.png"
+                 style="width: 50%;"><br>
+            Radio data folding (Deshpande & Rankin 1999)
+          </div>
+          <div id="overlay" class="fragment fade-in-then-out">
+            <br>
+            <img data-src="figures/fermi-lightcurves.jpg"><br>
+            Example lightcurves of pulsars (Credit: Fermi-LAT)
+          </div>
+          <div id="overlay" class="fragment fade-in">
+            <!-- <p>More than 2,000 pulsars have been discovered to date. Their periods
+                 and period derivatives are measured with high precision.</p> -->
+            <br><br>
+            <img data-src="figures/pulsar-ppdot.png" style="width: 60%;"><br>
+            (Credit: ATNF Pulsar Catalog)
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>Pulsar magnetosphere</h2>
+          <div class="content">
+            <p class="fragment">Pulsars are surrounded by a large number of charged particles,
+              mainly $e^-$ and $e^+$. These particles form a <em>plasma</em>.</p>
+            <br>
+            <p class="fragment">These particles emit the observable radiation
+            that pulses with the rotation of the star.</p>
+            <br>
+            <p class="fragment">The plasma-filled environment around a pulsar is
+            called its <em>magnetosphere</em>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>Pulsar magnetosphere</h2>
+          <div class="content">
+            <p>The presence of plasma modifies the structure of the magnetosphere:</p><br>
+            <video controls="" style="width: 70%;"><source src=
+            "./movies/pulsar.mp4" type="video/mp4"></video><br>
+            (<em>Chen</em> & Beloborodov 2014)
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>Pulsar magnetosphere</h2>
+          <div class="content">
+            <p>The same structure persists when the pulsar is tilted:</p><br>
+            <img src="figures/pulsar-hakobyan.png" style="width: 100%;"><br>
+            (Hakobyan et al. 2022)
+          </div>
+        </div>
+      </section>
+
+      <!-- <section data-background-iframe="https://www.pulsarmagnetosphere.com/PSRJ0030/ffe.html"
+           data-background-interactive>
+           <div class="content-page">
+           <h2>Pulsar magnetosphere in 3D</h2>
+           </div>
+           </section>
+      -->
+      <section>
+        <div class="content-page">
+          <h2>How do Pulsars shine?</h2>
+          <div class="content">
+            <p class="fragment">Radio waves come from their magnetic pole</p>
+            <br>
+            <p class="fragment">X-rays come from the surface of the pulsar</p>
+            <br>
+            <p class="fragment">Gamma-rays come from the current sheets in the magnetosphere</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>How do Pulsars shine?</h2>
+          <div class="content">
+            <p>X-rays from the surface bend under the influence of the
+            pulsar's gravity:</p>
+            <br>
+            <video controls="" style="width: 80%;"><source src=
+            "./movies/Lensing.1080.mp4" type="video/mp4"></video><br>
+            (Credit: NASA Goddard Space Flight Center Conceptual Image Lab)
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>How do Pulsars shine?</h2>
+          <div class="content">
+            <p>Gamma-rays come from the current sheet:</p>
+            <br>
+            <img src="figures/gamma-ray-benoit.png" style="width: 50%;"><br>
+            (Cerutti et al. 2016)
+          </div>
+      </section>
+
+      <section>
+        <div class="content-page">
+          <h2>How do Pulsars shine?</h2>
+          <div class="content">
+            <p>In 2020, we modeled a particular pulsar, PSR J0030+0451</p>
+            <br>
+            <div class="r-stack">
+              <img src="figures/magnetosphere-lambda.png"
+                   class="fragment fade-in-then-out" style="width:60%">
+              <img src="figures/magnetosphere-emission.png"
+                   class="fragment fade-in-then-out" style="width:60%">
+              <img src="figures/multi-wavelength-label.png"
+                   class="fragment fade-in"
+                   style="width: 35%;">
+            </div>
+            <br>
+            (<em>Chen</em>, Yuan & Vasilopoulos 2020)
+          </div>
+        </div>
+      </section>
+
+      <section data-background-iframe="https://www.pulsarmagnetosphere.com/PSRJ0030/ffe.html"
+      data-background-interactive>
+        <div class="content-page">
+          <h2>Inferred Magnetic Field of PSR J0030+0451</h2>
+        </div>
+      </section>
+
+      <section data-background-image="figures/Nustar_chandra_supernova_main_art_LARGE.jpg">
+
+      </section>
+
+
+    </div>
+  </div>
+  <script src="js/head.min.js"></script>
+  <script>
+
+   head.js(
+     "vendor/jquery.min.js",
+     "vendor/three.js/build/three.min.js",
+     "vendor/three.js/examples/js/controls/OrbitControls.js",
+     /* "vendor/socket.io-client/dist/socket.io.js", */
+     "vendor/THREE.MeshLine.js",
+     /* "vendor/dat.gui.min.js",*/
+     "vendor/EventEmitter.js",
+     "js/samples.js",
+   );
+  </script>
+  <script src="./reveal.js/dist/reveal.js"></script>
+  <script src="./reveal.js/plugin/math/math.js"></script>
+  <script src="./reveal.js/plugin/notes/notes.js"></script>
+  <script src="./reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="./reveal.js/plugin/highlight/highlight.js"></script>
+  <script>
+
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        transition: "fade",
+        slideNumber: true,
+        history: true,
+        center: false,
+        width: "100%",
+        height: "100%",
+        disableLayout: false,
+        // minScale: 1,
+        // maxScale: 1,
+        margin: 0,
+        padding: 0,
+        hash: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          // pass other options into `MathJax.Hub.Config()`
+          TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+      });
+      Reveal.addEventListener("slidechanged", function(event) {
+        var foot1 = document.getElementById("footer1");
+        var foot2 = document.getElementById("footer2");
+
+        if (Reveal.getIndices().h === 0) {
+          foot1.style.display = "none";
+          foot2.style.display = "none";
+        } else {
+          foot1.style.display = "block";
+          foot2.style.display = "block";
+        }
+      });
+
+  </script>
+</body>
+</html>
