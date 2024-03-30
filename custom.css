@@ -416,6 +416,11 @@
   color: #11d4fd;
   z-index: 2; }
 
+.full {
+    height:100%;
+    width:100%;
+}
+
 #bgcanvas {
   position: fixed;
   width: 100%;
